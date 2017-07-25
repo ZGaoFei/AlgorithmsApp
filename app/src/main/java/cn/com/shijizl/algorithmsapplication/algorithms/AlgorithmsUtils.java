@@ -287,5 +287,92 @@ public class AlgorithmsUtils {
      */
     PriorityQueue priorityQueue;
 
+    //================栈与队列=========================
+
+    //================链表实现二叉树=========================
+
+    /**
+     *
+     * Comparable:是一个对象本身就已经支持自比较所需要实现的接口，实现Comparable接口
+     * 只提供了compareTo()方法
+     * a.compareTo(b);
+     *
+     * Comparator 是策略模式（strategy design pattern），就是不改变对象自身，而用一个策略对象（strategy object）来改变它的行为
+     * 集成Comparator实现一个比较器
+     * 提供了compare()和equals()方法
+     * compare(a,b);
+     *
+     * @param <E>
+     */
+    //二叉树
+    class ErChaShu<E extends Comparable<E>>{
+        E e;
+        ErChaShu<E> left;
+        ErChaShu<E> right;
+
+        ErChaShu(E e, ErChaShu<E> left, ErChaShu<E> right) {
+            this.e = e;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    //二叉查找树
+    class ErChaShuSearch<E extends Comparable<E>> {
+        ErChaShu<E> root;
+
+        ErChaShuSearch() {
+        }
+
+        public boolean search(E e) {
+            ErChaShu<E> current = root;
+            while (current != null) {
+                if (e.compareTo(current.e) < 0) {
+                    current = current.left;
+                } else if (e.compareTo(current.e) > 0) {
+                    current = current.right;
+                } else {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // 二叉查找树的插入
+        public boolean insert(E e) {
+            // 如果之前是空二叉树 插入的元素就作为根节点
+            if (root == null) {
+                root = createNewNode(e);
+            } else {
+                // 否则就从根节点开始遍历 直到找到合适的父节点
+                ErChaShu<E> parent = null;
+                ErChaShu<E> current = root;
+                while (current != null) {
+                    if (e.compareTo(current.e) < 0) {
+                        parent = current;
+                        current = current.left;
+                    } else if (e.compareTo(current.e) > 0) {
+                        parent = current;
+                        current = current.right;
+                    } else {
+                        return false;
+                    }
+                }
+                // 插入
+                if (e.compareTo(parent.e) < 0) {
+                    parent.left = createNewNode(e);
+                } else {
+                    parent.right = createNewNode(e);
+                }
+            }
+            return true;
+        }
+
+        // 创建新的节点
+        protected ErChaShu<E> createNewNode(E e) {
+            return new ErChaShu(e, null, null);
+        }
+
+    }
 
 }

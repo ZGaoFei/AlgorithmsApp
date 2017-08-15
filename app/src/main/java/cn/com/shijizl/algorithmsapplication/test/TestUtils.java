@@ -3,6 +3,22 @@ package cn.com.shijizl.algorithmsapplication.test;
 
 import android.util.Log;
 
+/**
+ * 排序算法的时间复杂度和空间复杂度
+ *
+ *          时间复杂度    最好        最坏       空间复杂度
+ * 直接插入：O(n*n)       O(n)       O(n*n)     O(1)
+ * shell：  O(n^1.3)     O(n)       O(n^2)     O(1)
+ * 直接选择：O(n^2)       O(n^2)     O(n^2)     O(1)
+ * 堆排序：  O(nLog2n)    O(nLog2n)  O(nLog2n)  O(1)
+ * 冒泡排序：O(n^2)       O(n)       O(n^2)     O(1)
+ * 快速排序：O(nLog2n)    O(nLog2n)  O(n^2)     O(nLog2n)
+ * 归并排序：O(nLog2n)    O(nLog2n)  O(nLog2n)  O(n)
+ * 基数排序：O(d(r+n))    O(d(n+rd)) O(d(r+n))  O(rd+n)
+ * r关键字的基数，d代表长度，n代表关键字的个数
+ *
+ *
+ */
 public class TestUtils {
 
     // 二分查找法
@@ -438,7 +454,7 @@ public class TestUtils {
 
     /**
      * 通过两个指针，两个指针都指向链表的开始，
-     * 一个指针先向前走K个节点，然后再以前向前走，当先走的那个节点到达末尾时，
+     * 一个指针先向前走K个节点，然后再以前向后走，当先走的那个节点到达末尾时，
      * 另一个节点就刚好与末尾节点相差K个节点
      */
     public static Node<Integer> findNode(Node<Integer> node, int k) {
@@ -524,4 +540,7 @@ public class TestUtils {
     //========把一个int型数组中的数字拼成一个串，这个串代表的数字最小======
     //========输入一颗二叉树，输出它的镜像（每个节点的左右子节点交换位置）=====
     //========输入两个链表，找到它们第一个公共节点====
+
+
+
 }

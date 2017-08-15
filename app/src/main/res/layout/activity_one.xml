@@ -4,24 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.com.shijizl.algorithmsapplication.MainActivity">
+    tools:context="cn.com.shijizl.algorithmsapplication.eventbus.OneActivity">
 
     <Button
-        android:id="@+id/bt_one"
+        android:id="@+id/bt_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="collection" />
+        android:text="post"/>
 
     <Button
-        android:id="@+id/bt_two"
+        android:id="@+id/bt_post_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="collection" />
-
-    <Button
-        android:id="@+id/bt_three"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="event" />
+        android:text="post two"/>
 
 </LinearLayout>

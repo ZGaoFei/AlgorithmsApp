@@ -3,7 +3,10 @@ package cn.com.shijizl.algorithmsapplication.test;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import cn.com.shijizl.algorithmsapplication.R;
@@ -59,7 +62,24 @@ public class TestActivity extends AppCompatActivity {
                 TestUtils.recordArray(array4);
 
                 TestUtils.print("排序后....", array4);
+
+                test();
             }
         });
+    }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            Log.e("==2==", "=====");
+        }
+    };
+
+    private void test() {
+        Log.e("==1==", "====");
+        handler.sendEmptyMessageDelayed(0, 20 * 1000);
+
     }
 }

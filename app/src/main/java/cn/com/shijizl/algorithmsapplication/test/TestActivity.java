@@ -59,11 +59,14 @@ public class TestActivity extends AppCompatActivity {
 
 //                int count = TestUtils.findCount(7);
 
-                TestUtils.recordArray(array4);
+//                TestUtils.recordArray(array4);
+//
+//                TestUtils.print("排序后....", array4);
+//
+//                test();
 
-                TestUtils.print("排序后....", array4);
-
-                test();
+                int gcd = gcd(2, 3);
+                Log.e("==gcd====", "======" + gcd);
             }
         });
     }
@@ -81,5 +84,12 @@ public class TestActivity extends AppCompatActivity {
         Log.e("==1==", "====");
         handler.sendEmptyMessageDelayed(0, 20 * 1000);
 
+    }
+
+    public int gcd(int a, int b) {
+        if (a % b == 0)
+            return b;
+        else
+            return gcd(b, a % b);
     }
 }

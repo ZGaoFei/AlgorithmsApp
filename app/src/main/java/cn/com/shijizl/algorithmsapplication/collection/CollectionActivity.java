@@ -78,7 +78,10 @@ public class CollectionActivity extends AppCompatActivity {
 //                AlgorithmsUtils.insert(3, 5, new int[]{1,2,3,4,6,7,8});
 
 //                AlgorithmsUtils.creat();
-                AlgorithmsUtils.create();
+//                AlgorithmsUtils.create();
+
+                AlgorithmsUtils utils = new AlgorithmsUtils();
+                utils.foo(22);
             }
         });
     }

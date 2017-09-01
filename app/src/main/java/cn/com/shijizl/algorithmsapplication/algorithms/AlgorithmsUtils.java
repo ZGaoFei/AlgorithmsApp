@@ -390,4 +390,14 @@ public class AlgorithmsUtils {
 
     }
 
+    public int count = 0;
+    public int foo(int x) {
+        count ++;
+
+        Log.e("====", "====" + count);
+        if (x <= 2)
+            return 1;
+        return foo(x - 2) + foo(x - 4) + 1;
+    }
+
 }
